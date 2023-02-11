@@ -12,6 +12,7 @@ export default {
 
 <style lang="scss">
 .phone-book {
+  width: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;

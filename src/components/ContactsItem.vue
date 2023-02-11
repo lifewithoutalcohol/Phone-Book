@@ -67,6 +67,7 @@ export default {
     justify-content: space-between;
     background: #f8eff8;
     position: relative;
+    border-radius: 30px;
   }
   &__text {
     flex: 1 0 auto;
