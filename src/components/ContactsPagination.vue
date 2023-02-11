@@ -32,6 +32,7 @@ export default {
     display: flex;
     margin-top: 15px;
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
 </style>

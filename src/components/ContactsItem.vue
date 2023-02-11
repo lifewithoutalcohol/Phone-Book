@@ -1,26 +1,27 @@
 <template>
   <div class="phone-book__contact">
     <div class="phone-book__text">
-      <div class="text_item">
+      <div class="text-item">
         <strong>ID:</strong> {{ contact.id }}
       </div>
-      <div class="text_item">
+      <div class="text-item">
         <strong>Number:</strong> {{ contact.phoneNumber }}
       </div>
-      <div class="text_item">
+      <div class="text-item">
         <strong>Name:</strong> {{ contact.name }}
       </div>
-      <div class="text_item">
+      <div class="text-item">
         <strong>CreatedAt:</strong> {{ contact.createdAt }}
       </div>
       <ChangeDialog
           :contact="contact"
           :isHidden="isHidden"
           @put="changeContact"
+          @hide="hide"
       />
     </div>
     <div >
-      <ContactsButton @click="isHidden = !isHidden">Редагувати</ContactsButton>
+      <ContactsButton @click="this.isHidden = false">Редагувати</ContactsButton>
     </div>
     <div >
       <ContactsButton @click="$emit('delete', contact)">Видалити</ContactsButton>
@@ -50,6 +51,9 @@ export default {
     changeContact() {
       this.$emit('put', this.contact)
       this.isHidden = true;
+    },
+    hide(isHidden) {
+      this.isHidden = isHidden
     }
   }
 }
@@ -59,18 +63,20 @@ export default {
 .phone-book {
   &__contact {
     padding: 15px;
-    border: 2px solid teal;
+    border: 2px solid #6d597a;
     font-size: 20px;
     margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #f8eff8;
+    background: #6d597a;
+    background: linear-gradient(270deg, #6d597a 0%, #e56b6f 100%);
     position: relative;
     border-radius: 30px;
+    color: white;
   }
   &__text {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
   }
 }
 .form__button {
@@ -82,7 +88,14 @@ export default {
   font-size: 20px;
   max-width: 200px;
 }
-.text_item {
+.text-item {
   margin: 5px 0;
+}
+@media (max-width: 517px) {
+  .phone-book {
+    &__contact {
+      flex-direction: column;
+    }
+  }
 }
 </style>

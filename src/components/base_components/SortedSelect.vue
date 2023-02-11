@@ -4,7 +4,6 @@
       :value="modelValue"
       @change="changeOption"
   >
-    <option disabled value="">Сортування за замовчуванням</option>
     <option
         v-for="option in options"
         :key="option.value"
@@ -41,11 +40,19 @@ export default {
     display: block;
     padding: 10px;
     align-self: flex-end;
-    background: none;
-    color: teal;
-    border: 1px solid teal;
+    background: linear-gradient(0deg, #b56576 0%, #e56b6f 50%);
+    color: #6d597a;
+    border: 1px solid #6d597a;
+    border-radius: 20px;
     margin: 10px;
-    font-size: 16px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 630px) {
+  .phone-book {
+    &__select {
+      align-self: center;
+    }
   }
 }
 </style>

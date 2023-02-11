@@ -18,6 +18,6 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  background: #eaac8b;
 }
-
 </style>

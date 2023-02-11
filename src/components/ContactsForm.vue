@@ -1,15 +1,15 @@
 <template>
   <form @submit.prevent class="phone-book__form">
-    <h4>Створення запису</h4>
+    <h4>Створення контакту</h4>
     <ContactsFormInput
         v-model="contact.phoneNumber"
         type="number"
-        placeholder="Номер телефону"
+        placeholder="Введіть номер телефону"
     />
     <ContactsFormInput
         v-model="contact.name"
         type="text"
-        placeholder="Ім'я користувача"
+        placeholder="Введіть ім'я користувача"
     />
     <ContactsButton @click="createContact">Створити</ContactsButton>
   </form>
@@ -46,7 +46,9 @@ export default {
 <style lang="scss" scoped>
 h4 {
   font-size: 24px;
-  margin: 0;
+  margin: 5px 0 10px;
+  color: #6d597a;
+  text-align: center;
 }
 .phone-book {
   &__form {
@@ -56,18 +58,13 @@ h4 {
     flex: 0 1 60%;
   }
 }
-.form {
-  &__button {
-    padding: 10px 15px;
-    background: none;
-    color: teal;
-    border: 1px solid teal;
-    margin: 10px;
-    font-size: 20px;
-    max-width: 200px;
-    align-self: center;
+@media (max-width: 630px) {
+  .phone-book {
+    &__form {
+      align-items: center;
+      width: 100%;
+    }
   }
-
 }
 
 </style>

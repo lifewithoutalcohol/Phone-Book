@@ -5,12 +5,11 @@ export const contactModule = {
         contacts: [],
         selectedOption: 'id',
         sortOption: [
+            {value: 'id', name: 'Сортування за замовчуванням'},
             {value: 'firstNewest', name: 'Спочатку нові'},
-            {value: 'firstLatest', name: 'Спочатку давніші'},
-            {value: 'id', name: 'Сортування за замовчуванням'}
+            {value: 'firstLatest', name: 'Спочатку давніші'}
         ],
         searchBy: '',
-
     }),
     getters: {
         contacts(state) {
